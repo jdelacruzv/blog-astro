@@ -21,13 +21,13 @@ h1 {
 }
 
 /* estilos de la barra de navegación */
-.menu {
-	background-color: #18191B;
+.menu-toggle {
+	background-color: #f1f5f9;
   border: none;
-  color: #fff;
   font-size: 1.2rem;
   font-weight: bold;
   padding: 5px 10px;
+	cursor: pointer;
 }
 
 .nav-links {
@@ -53,7 +53,7 @@ h1 {
 	color: #fff;
 }
 
-:has(.menu[aria-expanded="true"]) .nav-links {
+:has(.menu-toggle[aria-expanded="true"]) .nav-links {
   display: unset;
 }
 
@@ -64,7 +64,7 @@ h1 {
 		justify-content: space-between;
 	}
 
-	.menu {
+	.menu-toggle {
     display: none;
   }
 	
@@ -87,7 +87,7 @@ html.dark {
   color: #fff;
 }
 
-.dark .menu {
+.dark .menu-toggle {
   background-color: #fff;
   color: #000;
 }
