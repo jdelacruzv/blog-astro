@@ -3,10 +3,8 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const allPosts = await getCollection("blog");
-const tags = [
-	...new Set(allPosts.map((post) => post.data.tags).flat()),
-];
-const pageTitle = "Índice de etiquetas";
+const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+const pageTitle = "Lista de etiquetas";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -20,9 +18,11 @@ const pageTitle = "Índice de etiquetas";
 		}
 	</div>
 </BaseLayout>
+
 <style>
 	a {
-		color: #00539f;
+		color: #fff;
+		text-decoration: none;
 	}
 
 	.tags {
@@ -32,10 +32,14 @@ const pageTitle = "Índice de etiquetas";
 
 	.tag {
 		margin: 0.25em;
-		border: dotted 1px #a1a1a1;
+		border: solid 1px #a1a1a1;
 		border-radius: 0.5em;
 		padding: 0.5em 1em;
 		font-size: 1.15em;
-		background-color: #f8fcfd;
+		background-color: #23262f;
+	}
+
+	.tag:hover {
+		background-color: #15161b;
 	}
 </style>
