@@ -7,8 +7,8 @@ body {
 	margin: 0 auto;
 	width: 100%;
 	max-width: 80ch;
-	padding: 1rem;
-	line-height: 1.5;
+	padding: 1.5rem 1rem;
+	line-height: 1.75;
 }
 
 * {
@@ -44,7 +44,7 @@ h1 {
   font-size: 1rem;
   font-weight: bold;
   text-transform: capitalize;
-  color: #0d0950;
+  color: #17181C;
 }
 
 .nav-links a:hover,
@@ -90,6 +90,7 @@ html.dark,
 
 .dark .nav-links a,
 .dark .nav-links a:hover,
-.dark .nav-links a:focus {
+.dark .nav-links a:focus, 
+.dark .greeting-message {
   color: #fff;
 }

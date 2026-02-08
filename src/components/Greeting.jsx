@@ -1,4 +1,6 @@
 import { useState } from "preact/hooks";
+import "./Greeting.css";
+import "../styles/global.css";
 
 export default function Greeting({ messages }) {
 	const randomMessage = () =>
@@ -7,9 +9,14 @@ export default function Greeting({ messages }) {
 	const [greeting, setGreeting] = useState(messages[0]);
 
 	return (
-		<div>
-			<h3>{greeting} ¡Gracias por tu visita!</h3>
-			<button onClick={() => setGreeting(randomMessage())}>Nuevo saludo</button>
+		<div className="greeting-container">
+			<h3 className="greeting-message">{greeting} ¡Gracias por tu visita!</h3>
+			<button
+				className="greeting-button"
+				 onClick={() => setGreeting(randomMessage())}
+			>
+				Nuevo saludo
+			</button>
 		</div>
 	);
 }

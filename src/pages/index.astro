@@ -1,10 +1,63 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Greeting from "../components/Greeting";
-const pageTitle = "Página de inicio";
+const pageTitle = "Bienvenido mini blog Astro";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<h2>Mi impresionante subtítulo del blog</h2>
-	<Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+	<h2>¿Por qué Astro?</h2>
+	<p>
+		Astro es el framework web para construir sitios web orientados al contenido,
+		como blogs, marketing y comercio electrónico. Astro es conocido por ser
+		pionero en una nueva arquitectura frontend para reducir la sobrecarga y
+		complejidad de JavaScript en comparación con otros frameworks. Si necesitas un
+		sitio web que cargue rápidamente y tenga un excelente SEO, entonces Astro es
+		para ti.
+	</p>
+	<h2>Características</h2>
+	<p>
+		Astro es un framework todo en uno. Incluye todo lo que necesitas para crear un
+		sitio web, incorporado. También cuenta con cientos de integraciones y hooks de
+		API disponibles para personalizar un proyecto según tus necesidades y casos de
+		uso. Algunos aspectos destacados incluyen:
+	</p>
+	<ul>
+		<li>
+			<strong>Islas</strong>: Una arquitectura web basada en componentes optimizada
+			para sitios web orientados al contenido.
+		</li>
+		<li>
+			<strong>Agnostico a la UI</strong>: Compatible con React, Preact, Svelte,
+			Vue, Solid, HTMX, web components y más.
+		</li>
+		<li>
+			<strong>Servidor primero</strong>: Mueve la renderización costosa fuera de
+			los dispositivos de tus visitantes.
+		</li>
+		<li>
+			<strong>Cero JS por defecto</strong>: Menos JavaScript del lado del cliente
+			para no ralentizar tu sitio.
+		</li>
+		<li>
+			<strong>Colecciones de contenido</strong>: Organiza, valida y proporciona
+			seguridad de tipos de TypeScript para tu contenido en Markdown.
+		</li>
+		<li>
+			<strong>Personalizable</strong>: Partytown, MDX y cientos de integraciones
+			entre las que elegir.
+		</li>
+	</ul>
+	<Greeting
+		client:load
+		messages={[
+			"Olá",
+			"Hej",
+			"Hallo",
+			"Hola",
+			"Nǐ hǎo",
+			"Habari",
+			"Bonjour",
+			"Ciao",
+		]}
+	/>
 </BaseLayout>
