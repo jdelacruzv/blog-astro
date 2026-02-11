@@ -50,7 +50,7 @@ h1 {
 .nav-links a:hover,
 .nav-links a:focus {
 	background-color: #072446;
-	color: #fff;
+	color: #f1f5f9;
 }
 
 :has(.menu-toggle[aria-expanded="true"]) .nav-links {
@@ -82,15 +82,15 @@ h1 {
   }
 }
 
-html.dark,
+html.dark, /* Aquí se define la clase .dark en el elemento html */
 .dark .menu-toggle {
   background-color: #17181C;
-  color: #fff;
+	color: #f1f5f9;
 }
 
 .dark .nav-links a,
 .dark .nav-links a:hover,
 .dark .nav-links a:focus, 
 .dark .greeting-message {
-  color: #fff;
+	color: #f1f5f9;
 }

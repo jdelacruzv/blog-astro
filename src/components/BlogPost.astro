@@ -1,7 +1,23 @@
 ---
+import "../styles/global.css";
 const { url, title } = Astro.props;
 ---
 
 <li>
 	<a href={url}>{title}</a>
 </li>
+
+<style>
+	a {
+		color: #3d50f5;
+	}
+
+	a:hover {
+		color: #17181c;
+	}
+
+	/* Estilos para el modo oscuro */
+	html.dark a:hover {
+		color: #f1f5f9;
+	}
+</style>
