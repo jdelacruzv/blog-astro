@@ -1,0 +1,23 @@
+	a {
+		color: #f1f5f9;
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 1rem 0;
+	}
+
+	.tag {
+		margin: 0.25em;
+		border: solid 1px #a1a1a1;
+		border-radius: 0.5em;
+		padding: 0.5em 1em;
+		font-size: 1.15em;
+		background-color: #23262f;
+	}
+
+	.tag:hover {
+		background-color: #15161b;
+		cursor: pointer;
+	}
