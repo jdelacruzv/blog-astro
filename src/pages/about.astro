@@ -3,10 +3,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Sobre mí";
 
 const identity = {
-	firstName: "Sarah",
+	firstName: "Kattie",
 	country: "Canada",
-	occupation: "Escritor técnico",
-	hobbies: ["fotografia", "observación de aves", "peñarol"],
+	occupation: "Desarrolladora web",
+	hobbies: [
+		"actividades al aire libre",
+		"projectos de hazlo tú mismo",
+		"juegos de mesa",
+	],
 };
 
 const skills = [
@@ -15,14 +19,15 @@ const skills = [
 	"JavaScript",
 	"React",
 	"Astro",
-	"Redacción de documentos",
+	"Node.js",
+	"Python",
 ];
 
 const happy = true;
 const finished = true;
 const goal = 3;
 
-const skillColor = "crimson";
+const skillColor = "#007bff";
 const fontWeight = "bold";
 const textCase = "uppercase";
 ---
@@ -30,41 +35,110 @@ const textCase = "uppercase";
 <BaseLayout pageTitle={pageTitle}>
 	<style is:global define:vars={{ skillColor, fontWeight, textCase }}>
 		h1 {
-			color: purple;
-			font-size: 4rem;
+			font-size: 3rem;
+		}
+		.profile {
+			border-radius: 50%;
+			border: 4px solid #b3b1b1;
+			overflow: hidden;
+			width: 200px;
+			height: 200px;
+			margin: 0 auto 2rem;
+		}
+		.profile img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
 		}
 		.skill {
 			color: var(--skillColor);
 			font-weight: var(--fontWeight);
 			text-transform: var(--textCase);
 		}
-	</style>
-	<p>He aquí algunos datos sobre mí:</p>
-	<ul>
-		<li>Me llamo {identity.firstName}.</li>
-		<li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
-		{
-			identity.hobbies.length >= 2 && (
-				<li>
-					Dos de mis aficiones son: {identity.hobbies[0]} y {identity.hobbies[1]}
-				</li>
-			)
+		.status {
 		}
-	</ul>
-	<p>Mis habilidades son:</p>
-	<ul>
-		{skills.map((skill) => <li class="skill">{skill}</li>)}
-	</ul>
+		@media screen and (min-width: 912px) {
+			.identity {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				gap: 2rem;
+				margin-bottom: 2rem;
+			}
+			.profile {
+				flex-shrink: 0;
+			}
+			.details ul {
+				padding: 0;
+				list-style: none;
+			}
+			.skills ul {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 1rem;
+				padding: 0;
+				list-style: none;
+			}
+			.status {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				gap: 1rem;
+				margin-top: 2rem;
+			}
+			.status p {
+				margin: 0;
+			}
+		}
+	</style>
+	<main>
+		<section class="identity">
+			<figure class="profile">
+				<img
+					src="/public/kattie.jpeg"
+					alt="Foto de perfil"
+					width="200"
+					height="200"
+				/>
+			</figure>
+			<section class="details">
+				<p>He aquí algunos datos sobre mí:</p>
+				<ul>
+					<li>Me llamo {identity.firstName}.</li>
+					<li>Vivo en {identity.country} y trabajo como {identity.occupation}.</li>
+					{
+						identity.hobbies.length >= 2 && (
+							<li>
+								Tres de mis aficiones son: {identity.hobbies[0]}, {identity.hobbies[1]}{" "}
+								y {identity.hobbies[2]}.
+							</li>
+						)
+					}
+				</ul>
+			</section>
+		</section>
+		<section class="skills">
+			<p>Mis habilidades son:</p>
+			<ul>
+				{skills.map((skill) => <li class="skill">{skill}</li>)}
+			</ul>
+		</section>
+		<section class="status">
+			{happy && <p>¡Estoy feliz de aprender Astro!</p>}
 
-	{happy && <p>¡Estoy feliz de aprender Astro!</p>}
+			{finished && <p>¡He terminado este tutorial!</p>}
 
-	{finished && <p>¡He terminado este tutorial!</p>}
-
-	{
-		goal === 3 ? (
-			<p>Mi objetivo es terminar en 3 días.</p>
-		) : (
-			<p>Mi objetivo no son 3 días.</p>
-		)
-	}
+			{
+				goal === 3 ? (
+					<p>¡...Objetivo logrado...!</p>
+				) : (
+					<p>Mi objetivo no son 3 días.</p>
+				)
+			}
+		</section>
+	</main>
 </BaseLayout>
