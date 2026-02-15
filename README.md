@@ -44,4 +44,4 @@ Feel free to check [our documentation](https://docs.astro.build) or jump into ou
 
 ## 🌐 Live demo: 
 
-** https://example-blog-astro.netlify.app/
+https://example-blog-astro.netlify.app/
